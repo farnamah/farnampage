@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -50,7 +52,7 @@
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="../../statics/images/photo_2023-09-18_21-30-08.jpg" alt="Image"/></a></div>
           <div class="h2 title">Farnam Ahmadzadeh</div>
-          <p class="category text-white">Web Developer, Video Editor</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white">Web Developer, Video Editor</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a>
         </div>
       </div>
       <div class="section">
@@ -362,9 +364,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="card-body">
-                    <form action="https://formspree.io/your@email.com" method="POST">
+                    <form action="{% url 'website:contact'%}" method="POST">
                       <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                       <div class="row mb-3">
+                          {% csrf_token %}
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
                             <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>

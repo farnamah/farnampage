@@ -1,0 +1,11 @@
+from jinja2 import Environment, FileSystemLoader
+
+env = Environment(loader=FileSystemLoader('path/to/templates/folder'))
+
+template = env.get_template('template_name.html')
+
+context = {'name': 'farnam'}
+
+output = template.render(context)
+
+print(output)

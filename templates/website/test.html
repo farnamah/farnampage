@@ -10,8 +10,8 @@
 <body>
     <form action="{% url 'website:test' %}" method="post">
         {% csrf_token %}
-        <lable>name:</lable>
-        <input name="name" type="text">
+
+        {{ form.as_p }}
         <button type="submit">submit</button>
     </form>
 
