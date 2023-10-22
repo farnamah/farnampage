@@ -25,22 +25,25 @@ def about_view(request):
 
 
 def contact_view(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
+            print(form.cleaned_data)
             form.save()
+        else:
+            print(form.errors)
     form = ContactForm()
     return render(request, 'website/index.html', {'form': form})
 
 
 
-def test_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('done')
-        else:
-            return HttpResponse('not valid')
-    form = ContactForm()
-    return render(request, 'website/test.html', {'form': form})
+# def test_view(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponse('done')
+#         else:
+#             return HttpResponse('not valid')
+#     form = ContactForm()
+#     return render(request, 'website/test.html', {'form': form})
