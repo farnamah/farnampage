@@ -1,5 +1,6 @@
 from django import forms
 from website.models import Contact
+from captcha.fields import CaptchaField
 
 
 # Creating a simple form for capturing the name, email, subject, and message
@@ -12,6 +13,8 @@ class NameForm(forms.Form):
 
 # Creating a form based on the Contact model
 class ContactForm(forms.ModelForm):
+    captcha = CaptchaField()
+
     class Meta:
         model = Contact
         fields = '__all__'
