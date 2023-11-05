@@ -25,8 +25,10 @@ DATABASES = {
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'statics',
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'statics',
+# ]
 
 CSRF_COOKIE_SECURE = True
